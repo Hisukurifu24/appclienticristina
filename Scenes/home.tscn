@@ -1,0 +1,242 @@
+[gd_scene load_steps=13 format=3 uid="uid://53kxk7chwe1x"]
+
+[ext_resource type="Texture2D" uid="uid://bab5ql0qac4jt" path="res://Images/iconset.png" id="2_1ey7h"]
+[ext_resource type="PackedScene" uid="uid://d2exdckwfxks4" path="res://Scenes/clienti.tscn" id="2_o1ld7"]
+
+[sub_resource type="Gradient" id="Gradient_tt30a"]
+offsets = PackedFloat32Array(0.435065, 1)
+colors = PackedColorArray(0.729412, 0.572549, 0.2, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ey7h"]
+gradient = SubResource("Gradient_tt30a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ey7h"]
+
+[sub_resource type="Theme" id="Theme_1ey7h"]
+Button/styles/normal = SubResource("StyleBoxEmpty_1ey7h")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ld7"]
+atlas = ExtResource("2_1ey7h")
+region = Rect2(85, 394, 165, 189)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ayvv"]
+font_size = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1mvj"]
+atlas = ExtResource("2_1ey7h")
+region = Rect2(349, 401, 185, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxycn"]
+atlas = ExtResource("2_1ey7h")
+region = Rect2(601, 381, 200, 209)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqw7c"]
+atlas = ExtResource("2_1ey7h")
+region = Rect2(930, 383, 207, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86xni"]
+atlas = ExtResource("2_1ey7h")
+region = Rect2(1225, 393, 204, 211)
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_1ey7h")
+
+[node name="MenuBar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -121.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_1ey7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuBar/HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBar/HBoxContainer/Button/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuBar/HBoxContainer/Button/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_o1ld7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuBar/HBoxContainer/Button/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CLIENTI"
+label_settings = SubResource("LabelSettings_2ayvv")
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_1ey7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuBar/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBar/HBoxContainer/Button2/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuBar/HBoxContainer/Button2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_w1mvj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuBar/HBoxContainer/Button2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PROMOZIONI"
+label_settings = SubResource("LabelSettings_2ayvv")
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_1ey7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuBar/HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBar/HBoxContainer/Button3/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuBar/HBoxContainer/Button3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_lxycn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuBar/HBoxContainer/Button3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CALENDARIO"
+label_settings = SubResource("LabelSettings_2ayvv")
+horizontal_alignment = 1
+
+[node name="Button4" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_1ey7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuBar/HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBar/HBoxContainer/Button4/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuBar/HBoxContainer/Button4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_vqw7c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuBar/HBoxContainer/Button4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "STATISTICHE"
+label_settings = SubResource("LabelSettings_2ayvv")
+horizontal_alignment = 1
+
+[node name="Button5" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_1ey7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuBar/HBoxContainer/Button5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBar/HBoxContainer/Button5/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuBar/HBoxContainer/Button5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_86xni")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuBar/HBoxContainer/Button5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "IMPOSTAZIONI"
+label_settings = SubResource("LabelSettings_2ayvv")
+horizontal_alignment = 1
+
+[node name="Clienti" parent="." instance=ExtResource("2_o1ld7")]
+layout_mode = 1
