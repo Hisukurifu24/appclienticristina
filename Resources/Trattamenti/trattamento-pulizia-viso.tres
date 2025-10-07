@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TipoTrattamento" load_steps=2 format=3 uid="uid://c2k8nan1p4x7e"]
+
+[ext_resource type="Script" uid="uid://b0djbhkeewr8v" path="res://Scripts/Resources/tipo_trattamento.gd" id="1_8hj1m"]
+
+[resource]
+script = ExtResource("1_8hj1m")
+nome = "Pulizia del viso profonda"
+descrizione = "Trattamento completo per rimuovere impurità e punti neri dalla pelle"

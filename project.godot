@@ -15,6 +15,10 @@ run/main_scene="uid://53kxk7chwe1x"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="uid://mom0gwv25aux"
 
+[autoload]
+
+ClientManagerNode="*res://Scripts/ClientManager.gd"
+
 [display]
 
 window/size/viewport_width=768

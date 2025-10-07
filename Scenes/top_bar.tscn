@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdvpqvcid0n3i"]
+
+[ext_resource type="Script" uid="uid://c5u8wkapj1fh3" path="res://Scripts/top_bar.gd" id="1_6umry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nk36g"]
+font_size = 32
+
+[node name="TopBar" type="Panel"]
+custom_minimum_size = Vector2(0, 100)
+script = ExtResource("1_6umry")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "<"
+
+[node name="Title" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_nk36g")
+vertical_alignment = 1

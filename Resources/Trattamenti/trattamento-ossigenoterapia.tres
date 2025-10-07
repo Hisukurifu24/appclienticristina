@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TipoTrattamento" load_steps=2 format=3 uid="uid://k4nfy5alad5t"]
+
+[ext_resource type="Script" uid="uid://b0djbhkeewr8v" path="res://Scripts/Resources/tipo_trattamento.gd" id="1_8hj1m"]
+
+[resource]
+script = ExtResource("1_8hj1m")
+nome = "Ossigenoterapia"
+descrizione = "Infusione di ossigeno per rivitalizzare e illuminare la pelle"
