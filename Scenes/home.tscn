@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c0rodel4w5yx1" path="res://Scripts/home.gd" id="1_ibywg"]
 [ext_resource type="Texture2D" uid="uid://bab5ql0qac4jt" path="res://Images/iconset.png" id="2_1ey7h"]
 [ext_resource type="PackedScene" uid="uid://d2exdckwfxks4" path="res://Scenes/clienti.tscn" id="2_o1ld7"]
+[ext_resource type="Texture2D" uid="uid://ge7nav1tdscc" path="res://Images/client_icon.tres" id="3_12ycv"]
 
 [sub_resource type="Gradient" id="Gradient_tt30a"]
 offsets = PackedFloat32Array(0.435065, 1)
@@ -17,10 +18,6 @@ gradient = SubResource("Gradient_tt30a")
 Button/styles/normal = SubResource("StyleBoxEmpty_1ey7h")
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_12ycv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1ld7"]
-atlas = ExtResource("2_1ey7h")
-region = Rect2(85, 394, 165, 189)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ayvv"]
 font_size = 10
@@ -123,7 +120,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuBar/HBoxContainer/ClientButton/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = SubResource("AtlasTexture_o1ld7")
+texture = ExtResource("3_12ycv")
 expand_mode = 1
 stretch_mode = 5
 

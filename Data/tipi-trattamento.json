@@ -1,0 +1,86 @@
+[
+	{
+		"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+		"nome": "Trattamento anti-età"
+	},
+	{
+		"descrizione": "Trattamento completo per rimuovere impurità e punti neri dalla pelle",
+		"nome": "Pulizia del viso profonda"
+	},
+	{
+		"descrizione": "Trattamento esfoliante per migliorare la texture e luminosità della pelle",
+		"nome": "Peeling chimico"
+	},
+	{
+		"descrizione": "Trattamento con luce pulsata per macchie solari e piccole rughe",
+		"nome": "Fotoringiovanimento"
+	},
+	{
+		"descrizione": "Maschera idratante profonda per pelli secche e disidratate",
+		"nome": "Idratazione intensiva"
+	},
+	{
+		"descrizione": "Terapia specifica per pelli acneiche con acido salicilico e zinco",
+		"nome": "Trattamento acne"
+	},
+	{
+		"descrizione": "Esfoliazione meccanica per levigare cicatrici e imperfezioni",
+		"nome": "Microdermoabrasione"
+	},
+	{
+		"descrizione": "Trattamento rassodante e lifting non invasivo con radiofrequenza",
+		"nome": "Radiofrequenza viso"
+	},
+	{
+		"descrizione": "Infusione di ossigeno per rivitalizzare e illuminare la pelle",
+		"nome": "Ossigenoterapia"
+	},
+	{
+		"descrizione": "Terapia laser per capillari dilatati e rossori del viso",
+		"nome": "Trattamento couperose"
+	},
+	{
+		"descrizione": "Iniezioni di acido ialuronico per idratazione profonda e volumizzazione",
+		"nome": "Mesoterapia viso"
+	},
+	{
+		"descrizione": "Trattamento con luce LED per stimolare il collagene e ridurre l'infiammazione",
+		"nome": "LED terapia"
+	},
+	{
+		"descrizione": "Cura specifica per pelli maschili irritate dalla rasatura quotidiana",
+		"nome": "Trattamento barba"
+	},
+	{
+		"descrizione": "Trattamento tensore con fili di PDO per effetto lifting naturale",
+		"nome": "Lifting non chirurgico"
+	},
+	{
+		"descrizione": "Trattamento con CO2 per migliorare microcircolazione e ossigenazione",
+		"nome": "Carbossiterapia"
+	},
+	{
+		"descrizione": "Pulizia profonda con idratazione simultanea e infusione di antiossidanti",
+		"nome": "HydraFacial"
+	},
+	{
+		"descrizione": "Trattamento con freddo controllato per tonificare e ringiovanire",
+		"nome": "Criocura"
+	},
+	{
+		"descrizione": "Esfoliazione meccanica per rimuovere cellule morte e peluria del viso",
+		"nome": "Dermaplaning"
+	},
+	{
+		"descrizione": "Iniezioni di vitamine e aminoacidi per stimolare il rinnovamento cellulare",
+		"nome": "Biostimolazione"
+	},
+	{
+		"descrizione": "Laser Q-switched per rimozione di iperpigmentazioni e macchie dell'età",
+		"nome": "Trattamento macchie solari"
+	},
+	{
+		"descrizione": "Depilazione corpo effettuata con tecnologia laser.",
+		"nome": "Depilazione Laser"
+	}
+]

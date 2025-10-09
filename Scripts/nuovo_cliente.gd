@@ -23,6 +23,25 @@ func _ready():
 	year_input.max_value = Time.get_date_dict_from_system().year
 	year_input.value = year_input.max_value
 	error_label.visible = false
+	insert_client_data()
+
+
+func insert_client_data():
+	var client = ClientManagerNode.selected_client
+	if client:
+		name_input.text = client.nominativo
+		email_input.text = client.email
+		phone_input.text = client.numero_di_telefono
+		address_input.text = client.indirizzo
+		day_input.value = client.data_di_nascita.get("giorno", 1)
+		month_input.value = client.data_di_nascita.get("mese", 1)
+		year_input.value = client.data_di_nascita.get("anno", year_input.max_value)
+		product_input.text = client.autocura
+		if client.foto:
+			photo.texture = client.foto
+		else:
+			photo.texture = null
+
 
 func on_add_photo_button_pressed():
 	var file_dialog = FileDialog.new()

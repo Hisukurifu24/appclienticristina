@@ -1,0 +1,200 @@
+[gd_scene load_steps=10 format=3 uid="uid://63oj877unl1a"]
+
+[ext_resource type="Script" uid="uid://btdowm7lor261" path="res://Scripts/trattamento.gd" id="1_unbp8"]
+[ext_resource type="PackedScene" uid="uid://bdvpqvcid0n3i" path="res://Scenes/top_bar.tscn" id="2_ppiy3"]
+[ext_resource type="PackedScene" uid="uid://bsbyjq2gwp27q" path="res://Scenes/dettagli_cliente.tscn" id="3_x5reh"]
+[ext_resource type="Texture2D" uid="uid://durwkh8h6jymi" path="res://Images/icon.svg" id="4_unbp8"]
+[ext_resource type="Texture2D" uid="uid://ge7nav1tdscc" path="res://Images/client_icon.tres" id="5_df0wd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_unbp8"]
+font_size = 32
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qwo7"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_wt6qc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhxkj"]
+bg_color = Color(0.576471, 0.129412, 0.129412, 1)
+
+[node name="DettagliTrattamento" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_unbp8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="TopBar" parent="VBoxContainer" instance=ExtResource("2_ppiy3")]
+layout_mode = 2
+previous_scene = ExtResource("3_x5reh")
+title = "Trattamento"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "INFO"
+label_settings = SubResource("LabelSettings_unbp8")
+
+[node name="Nome" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nome trattamento"
+label_settings = SubResource("LabelSettings_0qwo7")
+
+[node name="Descrizione" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Descrizione del trattamento"
+label_settings = SubResource("LabelSettings_wt6qc")
+
+[node name="Data" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12-02-2011"
+label_settings = SubResource("LabelSettings_wt6qc")
+
+[node name="Cliente" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nome cliente"
+label_settings = SubResource("LabelSettings_wt6qc")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "FOTO"
+label_settings = SubResource("LabelSettings_unbp8")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Questo trattamento"
+label_settings = SubResource("LabelSettings_0qwo7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Prima del trattamento:"
+horizontal_alignment = 1
+
+[node name="Before" type="TextureRect" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+texture = ExtResource("4_unbp8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Dopo il trattamento:"
+horizontal_alignment = 1
+
+[node name="After" type="TextureRect" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+texture = ExtResource("5_df0wd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "
+Storia del trattamento"
+label_settings = SubResource("LabelSettings_0qwo7")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Prima del 1° trattamento:"
+horizontal_alignment = 1
+
+[node name="First" type="TextureRect" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+texture = ExtResource("4_unbp8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Dopo l'ultimo trattamento:"
+horizontal_alignment = 1
+
+[node name="Last" type="TextureRect" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer2/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+texture = ExtResource("5_df0wd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DeleteButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhxkj")
+text = "CANCELLA QUESTO
+TRATTAMENTO"

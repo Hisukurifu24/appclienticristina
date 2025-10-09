@@ -1,0 +1,226 @@
+[
+	{
+		"cliente": "mario.rossi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 15,
+			"mese": 9
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Mario Rossi_Pulizia del viso profonda_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Mario Rossi_Pulizia del viso profonda_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento completo per rimuovere impurità e punti neri dalla pelle",
+			"nome": "Pulizia del viso profonda"
+		}
+	},
+	{
+		"cliente": "giulia.bianchi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 18,
+			"mese": 9
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Giulia Bianchi_Trattamento anti-età_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Giulia Bianchi_Trattamento anti-età_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+			"nome": "Trattamento anti-età"
+		}
+	},
+	{
+		"cliente": "alessandro.verdi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 22,
+			"mese": 9
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Alessandro Verdi_Peeling chimico_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Alessandro Verdi_Peeling chimico_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento esfoliante per migliorare la texture e luminosità della pelle",
+			"nome": "Peeling chimico"
+		}
+	},
+	{
+		"cliente": "sofia.ferrari@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 25,
+			"mese": 9
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Sofia Ferrari_Trattamento acne_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Sofia Ferrari_Trattamento acne_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Terapia specifica per pelli acneiche con acido salicilico e zinco",
+			"nome": "Trattamento acne"
+		}
+	},
+	{
+		"cliente": "elena.marino@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 28,
+			"mese": 9
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Elena Marino_Radiofrequenza viso_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Elena Marino_Radiofrequenza viso_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento rassodante e lifting non invasivo con radiofrequenza",
+			"nome": "Radiofrequenza viso"
+		}
+	},
+	{
+		"cliente": "mario.rossi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 2,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Mario Rossi_Idratazione intensiva_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Mario Rossi_Idratazione intensiva_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Maschera idratante profonda per pelli secche e disidratate",
+			"nome": "Idratazione intensiva"
+		}
+	},
+	{
+		"cliente": "sofia.ferrari@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 5,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Sofia Ferrari_Microdermoabrasione_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Sofia Ferrari_Microdermoabrasione_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Esfoliazione meccanica per levigare cicatrici e imperfezioni",
+			"nome": "Microdermoabrasione"
+		}
+	},
+	{
+		"cliente": "luca.conti@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 8,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Luca Conti_Trattamento couperose_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Luca Conti_Trattamento couperose_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Terapia laser per capillari dilatati e rossori del viso",
+			"nome": "Trattamento couperose"
+		}
+	},
+	{
+		"cliente": "chiara.lombardi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 1,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Chiara Lombardi_Mesoterapia viso_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Chiara Lombardi_Mesoterapia viso_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Iniezioni di acido ialuronico per idratazione profonda e volumizzazione",
+			"nome": "Mesoterapia viso"
+		}
+	},
+	{
+		"cliente": "alessandro.verdi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 3,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Alessandro Verdi_Fotoringiovanimento_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Alessandro Verdi_Fotoringiovanimento_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con luce pulsata per macchie solari e piccole rughe",
+			"nome": "Fotoringiovanimento"
+		}
+	},
+	{
+		"cliente": "chiara.lombardi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 6,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Chiara Lombardi_LED terapia_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Chiara Lombardi_LED terapia_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con luce LED per stimolare il collagene e ridurre l'infiammazione",
+			"nome": "LED terapia"
+		}
+	},
+	{
+		"cliente": "elena.marino@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 4,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Elena Marino_Ossigenoterapia_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Elena Marino_Ossigenoterapia_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Infusione di ossigeno per rivitalizzare e illuminare la pelle",
+			"nome": "Ossigenoterapia"
+		}
+	},
+	{
+		"cliente": "mario.rossi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 8,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+			"nome": "Trattamento anti-età"
+		}
+	},
+	{
+		"cliente": "mario.rossi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 9,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+			"nome": "Trattamento anti-età"
+		}
+	},
+	{
+		"cliente": "mario.rossi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 10,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+			"nome": "Trattamento anti-età"
+		}
+	},
+	{
+		"cliente": "mario.rossi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 13,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+			"nome": "Trattamento anti-età"
+		}
+	}
+]

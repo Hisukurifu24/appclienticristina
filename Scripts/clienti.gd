@@ -30,4 +30,5 @@ func update_client_list(filter: String = ""):
 			client_list.add_child(client_row)
 
 func on_new_client_button_pressed():
+	ClientManagerNode.selected_client = null
 	get_tree().change_scene_to_file("res://Scenes/nuovo_cliente.tscn")

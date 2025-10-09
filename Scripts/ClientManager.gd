@@ -2,15 +2,13 @@ class_name ClientManager
 extends Node
 
 var clients_photo_dir = "user://client_photos/"
-var default_icon = preload("res://Images/icon.svg")
+var default_icon = preload("res://Images/client_icon.tres")
 
-var trattamenti: Array[Trattamento] = []
 var clienti: Array[Cliente] = []
 var selected_client: Cliente = null
 
 func _ready():
 	ensure_client_photos_directory()
-	loadTrattamenti()
 	loadClients()
 
 # Ensure the client photos directory exists
@@ -36,31 +34,6 @@ func load_image_texture(path: String) -> Texture2D:
 	else:
 		push_error("Failed to load image from path: " + path)
 		return default_icon
-
-func loadTrattamenti():
-	if FileAccess.file_exists("res://Data/trattamenti.json"):
-		var file = FileAccess.open("res://Data/trattamenti.json", FileAccess.READ)
-		if file:
-			var data = file.get_as_text()
-			var json = JSON.new()
-			var parse_result = json.parse(data)
-			if parse_result == OK:
-				trattamenti = []
-				for trattamento_data in json.data:
-					var trattamento = Trattamento.new()
-					trattamento.nome = trattamento_data.get("nome", "")
-					trattamento.descrizione = trattamento_data.get("descrizione", "")
-					
-					var foto_prima_path = trattamento_data.get("foto_prima", "")
-					trattamento.foto_prima = load_image_texture(foto_prima_path)
-					
-					var foto_dopo_path = trattamento_data.get("foto_dopo", "")
-					trattamento.foto_dopo = load_image_texture(foto_dopo_path)
-					
-					trattamenti.append(trattamento)
-			file.close()
-	else:
-		print("File trattamenti.json non trovato.")
 
 func loadClients():
 	if FileAccess.file_exists("res://Data/clienti.json"):
@@ -89,20 +62,6 @@ func loadClients():
 					cliente.numero_di_telefono = cliente_data.get("numero_di_telefono", "")
 					cliente.email = cliente_data.get("email", "")
 					cliente.autocura = cliente_data.get("autocura", "")
-					
-					var trattamenti_data = cliente_data.get("trattamenti", [])
-					for trattamento_data in trattamenti_data:
-						var trattamento = Trattamento.new()
-						trattamento.nome = trattamento_data.get("nome", "")
-						trattamento.descrizione = trattamento_data.get("descrizione", "")
-						
-						var foto_prima_path = trattamento_data.get("foto_prima", "")
-						trattamento.foto_prima = load_image_texture(foto_prima_path)
-						
-						var foto_dopo_path = trattamento_data.get("foto_dopo", "")
-						trattamento.foto_dopo = load_image_texture(foto_dopo_path)
-						
-						cliente.trattamenti.append(trattamento)
 					
 					clienti.append(cliente)
 			file.close()

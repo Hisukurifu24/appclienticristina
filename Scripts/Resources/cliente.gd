@@ -11,5 +11,4 @@ var data_di_nascita: Dictionary[String, int] = {
 var indirizzo: String
 var numero_di_telefono: String
 var email: String
-var trattamenti: Array[Trattamento] = []
 var autocura: String

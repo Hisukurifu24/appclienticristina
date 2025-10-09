@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="TipoTrattamento" load_steps=2 format=3 uid="uid://cxt0rotlyy5pt"]
-
-[ext_resource type="Script" uid="uid://b0djbhkeewr8v" path="res://Scripts/Resources/tipo_trattamento.gd" id="1_8hj1m"]
-
-[resource]
-script = ExtResource("1_8hj1m")
-nome = "Lifting non chirurgico"
-descrizione = "Trattamento tensore con fili di PDO per effetto lifting naturale"
