@@ -50,13 +50,12 @@ func loadClients():
 					var foto_path = cliente_data.get("foto", "")
 					cliente.foto = load_image_texture(foto_path)
 					
-					# Convert generic Dictionary to typed Dictionary[String, int]
+					# Create Date object from JSON data
 					var data_nascita_raw = cliente_data.get("data_di_nascita", {"giorno": 1, "mese": 1, "anno": 2000})
-					var data_nascita_typed: Dictionary[String, int] = {}
-					data_nascita_typed["giorno"] = int(data_nascita_raw.get("giorno", 1))
-					data_nascita_typed["mese"] = int(data_nascita_raw.get("mese", 1))
-					data_nascita_typed["anno"] = int(data_nascita_raw.get("anno", 2000))
-					cliente.data_di_nascita = data_nascita_typed
+					var day = int(data_nascita_raw.get("giorno", 1))
+					var month = int(data_nascita_raw.get("mese", 1))
+					var year = int(data_nascita_raw.get("anno", 2000))
+					cliente.data_di_nascita = Date.new(day, month, year)
 					
 					cliente.indirizzo = cliente_data.get("indirizzo", "")
 					cliente.numero_di_telefono = cliente_data.get("numero_di_telefono", "")
@@ -77,9 +76,9 @@ func saveClients():
 			cliente_data["nominativo"] = cliente.nominativo
 			cliente_data["foto"] = clients_photo_dir + cliente.nominativo + ".png" if cliente.foto else ""
 			cliente_data["data_di_nascita"] = {
-				"giorno": cliente.data_di_nascita.get("giorno", 1),
-				"mese": cliente.data_di_nascita.get("mese", 1),
-				"anno": cliente.data_di_nascita.get("anno", 2000)
+				"giorno": cliente.data_di_nascita.day,
+				"mese": cliente.data_di_nascita.month,
+				"anno": cliente.data_di_nascita.year
 			}
 			cliente_data["indirizzo"] = cliente.indirizzo
 			cliente_data["numero_di_telefono"] = cliente.numero_di_telefono

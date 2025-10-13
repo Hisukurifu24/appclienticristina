@@ -48,13 +48,13 @@ func insert_client_data():
 		email_label.text = client.email
 		phone_label.text = client.numero_di_telefono
 		address_label.text = client.indirizzo
-		dob_label.text = str(client.data_di_nascita.get("giorno", 1)) + "/" + str(client.data_di_nascita.get("mese", 1)) + "/" + str(client.data_di_nascita.get("anno", 2000))
+		dob_label.text = str(client.data_di_nascita.day) + "/" + str(client.data_di_nascita.month) + "/" + str(client.data_di_nascita.year)
 		cure_label.text = client.autocura
 
 		for trattamento: Trattamento in TreatManagerNode.getAllTreatOfClient(client):
 			var treat_row = treat_row_scene.instantiate()
 			treat_row.get_node("Name").text = trattamento.tipo_trattamento.nome
-			treat_row.get_node("Date").text = str(trattamento.data.get("giorno", 1)) + "/" + str(trattamento.data.get("mese", 1)) + "/" + str(trattamento.data.get("anno", 2000))
+			treat_row.get_node("Date").text = str(trattamento.data.day) + "/" + str(trattamento.data.month) + "/" + str(trattamento.data.year)
 			treat_row.get_node("Button").pressed.connect(func():
 				TreatManagerNode.selected_treatment = trattamento
 				get_tree().change_scene_to_file("res://Scenes/trattamento.tscn")

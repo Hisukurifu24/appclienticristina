@@ -59,13 +59,12 @@ func loadTrattamenti():
 					
 					trattamento.cliente = ClientManagerNode.getClient(trattamento_data.get("cliente", ""))
 					
-					# Convert the generic dictionary to Dictionary[String, int]
+					# Create Date object from JSON data
 					var data_dict = trattamento_data.get("data", {})
-					var typed_data: Dictionary[String, int] = {}
-					typed_data["giorno"] = int(data_dict.get("giorno", 1))
-					typed_data["mese"] = int(data_dict.get("mese", 1))
-					typed_data["anno"] = int(data_dict.get("anno", 2000))
-					trattamento.data = typed_data
+					var day = int(data_dict.get("giorno", 1))
+					var month = int(data_dict.get("mese", 1))
+					var year = int(data_dict.get("anno", 2000))
+					trattamento.data = Date.new(day, month, year)
 
 					var foto_prima_path = trattamento_data.get("foto_prima", "")
 					trattamento.foto_prima = load_image_texture(foto_prima_path)
@@ -123,19 +122,19 @@ func getLastTreatment(tipo: TipoTrattamento, cliente: Cliente) -> Trattamento:
 				last_treatment = trattamento
 	return last_treatment
 
-func is_earlier(data1: Dictionary, data2: Dictionary) -> bool:
-	if data1["anno"] != data2["anno"]:
-		return data1["anno"] < data2["anno"]
-	if data1["mese"] != data2["mese"]:
-		return data1["mese"] < data2["mese"]
-	return data1["giorno"] < data2["giorno"]
+func is_earlier(data1: Date, data2: Date) -> bool:
+	if data1.year != data2.year:
+		return data1.year < data2.year
+	if data1.month != data2.month:
+		return data1.month < data2.month
+	return data1.day < data2.day
 
-func is_later(data1: Dictionary, data2: Dictionary) -> bool:
-	if data1["anno"] != data2["anno"]:
-		return data1["anno"] > data2["anno"]
-	if data1["mese"] != data2["mese"]:
-		return data1["mese"] > data2["mese"]
-	return data1["giorno"] > data2["giorno"]
+func is_later(data1: Date, data2: Date) -> bool:
+	if data1.year != data2.year:
+		return data1.year > data2.year
+	if data1.month != data2.month:
+		return data1.month > data2.month
+	return data1.day > data2.day
 
 func addTreatment(trattamento: Trattamento):
 	log_trattamenti.append(trattamento)
@@ -159,9 +158,9 @@ func saveTrattamenti():
 			trattamento_dict["tipo_trattamento"] = tipo_dict
 			trattamento_dict["cliente"] = trattamento.cliente.email
 			var data_dict = {}
-			data_dict["giorno"] = trattamento.data.get("giorno", 1)
-			data_dict["mese"] = trattamento.data.get("mese", 1)
-			data_dict["anno"] = trattamento.data.get("anno", 2000)
+			data_dict["giorno"] = trattamento.data.day
+			data_dict["mese"] = trattamento.data.month
+			data_dict["anno"] = trattamento.data.year
 			trattamento_dict["data"] = data_dict
 			trattamento_dict["foto_prima"] = ""
 			if trattamento.foto_prima:

@@ -46,10 +46,10 @@ func _ready():
 	error_label.visible = false
 	
 	add_treat_button.pressed.connect(on_add_treat_button_pressed)
-	add_before_button.pressed.connect(func(): 
+	add_before_button.pressed.connect(func():
 		popup_file_dialog(before_photo)
 	)
-	add_after_button.pressed.connect(func(): 
+	add_after_button.pressed.connect(func():
 		popup_file_dialog(after_photo)
 	)
 	
@@ -190,8 +190,8 @@ func popup_file_dialog(preview_node: TextureRect):
 	file_dialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
 	# Add more image format support
 	file_dialog.filters = [
-		"*.png ; PNG Image", 
-		"*.jpg ; JPEG Image", 
+		"*.png ; PNG Image",
+		"*.jpg ; JPEG Image",
 		"*.jpeg ; JPEG Image",
 		"*.bmp ; BMP Image",
 		"*.webp ; WebP Image",
@@ -231,11 +231,7 @@ func on_save_button_pressed():
 
 	new_trattamento.cliente = selected_client
 	new_trattamento.tipo_trattamento = selected_treatment_type
-	var data_typed: Dictionary[String, int] = {}
-	data_typed["giorno"] = day
-	data_typed["mese"] = month
-	data_typed["anno"] = year
-	new_trattamento.data = data_typed
+	new_trattamento.data = Date.new(day, month, year)
 	new_trattamento.foto_prima = before_texture
 	new_trattamento.foto_dopo = after_texture
 

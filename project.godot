@@ -19,6 +19,7 @@ config/icon="uid://mom0gwv25aux"
 
 ClientManagerNode="*res://Scripts/ClientManager.gd"
 TreatManagerNode="*res://Scripts/TreatManager.gd"
+PromoManagerNode="*res://Scripts/PromoManager.gd"
 
 [display]
 

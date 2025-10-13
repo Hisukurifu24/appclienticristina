@@ -22,7 +22,7 @@ func update_client_list(filter: String = ""):
 			var client_row = client_row_scene.instantiate()
 			client_row.get_node("%Nominativo").text = cliente.nominativo
 			client_row.get_node("%Photo").texture = cliente.foto
-			client_row.get_node("%DataNascita").text = str(cliente.data_di_nascita["giorno"]) + "/" + str(cliente.data_di_nascita["mese"]) + "/" + str(cliente.data_di_nascita["anno"])
+			client_row.get_node("%DataNascita").text = str(cliente.data_di_nascita.day) + "/" + str(cliente.data_di_nascita.month) + "/" + str(cliente.data_di_nascita.year)
 			client_row.pressed.connect(func():
 				ClientManagerNode.selected_client = cliente
 				get_tree().change_scene_to_file("res://Scenes/dettagli_cliente.tscn")

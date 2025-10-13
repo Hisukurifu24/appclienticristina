@@ -33,9 +33,9 @@ func insert_client_data():
 		email_input.text = client.email
 		phone_input.text = client.numero_di_telefono
 		address_input.text = client.indirizzo
-		day_input.value = client.data_di_nascita.get("giorno", 1)
-		month_input.value = client.data_di_nascita.get("mese", 1)
-		year_input.value = client.data_di_nascita.get("anno", year_input.max_value)
+		day_input.value = client.data_di_nascita.day
+		month_input.value = client.data_di_nascita.month
+		year_input.value = client.data_di_nascita.year
 		product_input.text = client.autocura
 		if client.foto:
 			photo.texture = client.foto
@@ -51,8 +51,8 @@ func on_add_photo_button_pressed():
 	file_dialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
 	# Add more image format support
 	file_dialog.filters = [
-		"*.png ; PNG Image", 
-		"*.jpg ; JPEG Image", 
+		"*.png ; PNG Image",
+		"*.jpg ; JPEG Image",
 		"*.jpeg ; JPEG Image",
 		"*.bmp ; BMP Image",
 		"*.webp ; WebP Image",
@@ -148,12 +148,8 @@ func on_save_button_pressed():
 	new_cliente.numero_di_telefono = phone
 	new_cliente.indirizzo = address
 	
-	# Create a properly typed Dictionary[String, int]
-	var data_nascita_typed: Dictionary[String, int] = {}
-	data_nascita_typed["giorno"] = day
-	data_nascita_typed["mese"] = month
-	data_nascita_typed["anno"] = year
-	new_cliente.data_di_nascita = data_nascita_typed
+	# Create Date object
+	new_cliente.data_di_nascita = Date.new(day, month, year)
 	
 	new_cliente.autocura = product
 	if photo.texture:
