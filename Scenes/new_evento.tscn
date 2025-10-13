@@ -1,0 +1,162 @@
+[gd_scene load_steps=5 format=3 uid="uid://e042125hk1dr"]
+
+[ext_resource type="Script" uid="uid://be2xrm532bl43" path="res://Scripts/new_evento.gd" id="1_dpqlw"]
+[ext_resource type="PackedScene" uid="uid://bdvpqvcid0n3i" path="res://Scenes/top_bar.tscn" id="2_5dvhe"]
+[ext_resource type="PackedScene" uid="uid://53kxk7chwe1x" path="res://Scenes/home.tscn" id="3_pk1wu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q6rjq"]
+font_color = Color(1, 0.3241, 0.258944, 1)
+
+[node name="NuovaPromozione" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dpqlw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="TopBar" parent="VBoxContainer" instance=ExtResource("2_5dvhe")]
+layout_mode = 2
+previous_scene = ExtResource("3_pk1wu")
+title = "Evento"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Titolo:"
+
+[node name="TitleInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Descrizione:"
+
+[node name="DescInput" type="TextEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+wrap_mode = 1
+caret_blink = true
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Giorno"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+text = "GG"
+
+[node name="DayInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+min_value = 1.0
+max_value = 31.0
+value = 1.0
+alignment = 1
+custom_arrow_step = 1.0
+select_all_on_focus = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+text = "MM"
+
+[node name="MonthInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+min_value = 1.0
+max_value = 12.0
+value = 1.0
+alignment = 1
+custom_arrow_step = 1.0
+select_all_on_focus = true
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+text = "AAAA"
+
+[node name="YearInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+min_value = 1900.0
+max_value = 2100.0
+value = 2025.0
+alignment = 1
+custom_arrow_step = 1.0
+select_all_on_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ErrorLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "This is an error"
+label_settings = SubResource("LabelSettings_q6rjq")
+horizontal_alignment = 1
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "SALVA"

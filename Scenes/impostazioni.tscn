@@ -1,11 +1,10 @@
-[gd_scene format=3 uid="uid://bxwgieghbsjja"]
+[gd_scene format=3 uid="uid://csedamyclk4jh"]
 
-[node name="Clienti" type="Control"]
+[node name="Impostazioni" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -134.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -15,9 +14,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = 64.0
+offset_top = 41.0
 offset_right = -27.0
 offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "IMPOSTAZIONI"

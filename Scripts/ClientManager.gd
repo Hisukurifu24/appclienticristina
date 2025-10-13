@@ -84,15 +84,7 @@ func saveClients():
 			cliente_data["numero_di_telefono"] = cliente.numero_di_telefono
 			cliente_data["email"] = cliente.email
 			cliente_data["autocura"] = cliente.autocura
-			var trattamenti_data = []
-			for trattamento in cliente.trattamenti:
-				var trattamento_data = {}
-				trattamento_data["nome"] = trattamento.nome
-				trattamento_data["descrizione"] = trattamento.descrizione
-				trattamento_data["foto_prima"] = trattamento.foto_prima.resource_path if trattamento.foto_prima else ""
-				trattamento_data["foto_dopo"] = trattamento.foto_dopo.resource_path if trattamento.foto_dopo else ""
-				trattamenti_data.append(trattamento_data)
-			cliente_data["trattamenti"] = trattamenti_data
+			
 			clienti_data.append(cliente_data)
 		var data = JSON.stringify(clienti_data)
 		file.store_string(data)

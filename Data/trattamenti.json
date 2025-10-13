@@ -222,5 +222,19 @@
 			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
 			"nome": "Trattamento anti-età"
 		}
+	},
+	{
+		"cliente": "f.naletto@outlook.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 13,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Francesco Naletto_Trattamento anti-età_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Francesco Naletto_Trattamento anti-età_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+			"nome": "Trattamento anti-età"
+		}
 	}
 ]

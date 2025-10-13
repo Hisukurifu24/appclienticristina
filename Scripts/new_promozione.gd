@@ -87,4 +87,4 @@ func on_save_button_pressed():
 
 	# Torna alla schermata delle promozioni
 	PromoManagerNode.selected_promo = null
-	get_tree().change_scene_to_file("res://Scenes/promozioni.tscn")
+	get_tree().change_scene_to_file("res://Scenes/home.tscn")

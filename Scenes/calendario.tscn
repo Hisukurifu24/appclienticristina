@@ -1,13 +1,18 @@
-[gd_scene format=3 uid="uid://dd0roak5473e5"]
+[gd_scene load_steps=4 format=3 uid="uid://b6iu2mh42h8so"]
 
-[node name="Clienti" type="Control"]
+[ext_resource type="Script" uid="uid://b155k7ifmng6o" path="res://Scripts/calendario.gd" id="1_ayoaq"]
+[ext_resource type="PackedScene" uid="uid://dytgl61vmqp0v" path="res://Scenes/calendar_event_day.tscn" id="2_uomwl"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_2x4ry"]
+
+[node name="Calendario" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -134.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ayoaq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -15,9 +20,141 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = 64.0
+offset_top = 41.0
 offset_right = -27.0
 offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VistaMeseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_2x4ry")
+text = "VISTA MESE"
+
+[node name="VistaEventiButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_2x4ry")
+text = "VISTA EVENTI"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PreviousMonthButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+
+[node name="MonthLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "GENNAIO 2025"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextMonthButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">"
+
+[node name="Vista Mese" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Vista Mese"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lun"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mar"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mer"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gio"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ven"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sab"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dom"
+horizontal_alignment = 1
+
+[node name="Calendar" type="GridContainer" parent="VBoxContainer/Vista Mese"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 7
+
+[node name="AddEventButton" type="Button" parent="VBoxContainer/Vista Mese"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Aggiungi Evento"
+
+[node name="Vista Eventi" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Vista Eventi"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Vista Eventi/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Events" type="VBoxContainer" parent="VBoxContainer/Vista Eventi/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CalendarEventDay" parent="VBoxContainer/Vista Eventi/ScrollContainer/MarginContainer/Events" instance=ExtResource("2_uomwl")]
+layout_mode = 2
