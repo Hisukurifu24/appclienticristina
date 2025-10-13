@@ -1,11 +1,16 @@
-[gd_scene format=3 uid="uid://c0x4221ra871p"]
+[gd_scene load_steps=3 format=3 uid="uid://c0x4221ra871p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qlwfw"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_uc0w2"]
+font_size = 24
 
 [node name="Clienti" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -134.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -24,4 +29,82 @@ theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Promo"
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Promozioni Attive"
+label_settings = SubResource("LabelSettings_qlwfw")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Aggiungi Promozione"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Promo" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/Promo"]
+layout_mode = 2
+text = "🎉  Sconto 20% sui trattamenti corpo"
+label_settings = SubResource("LabelSettings_uc0w2")
+
+[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/Promo"]
+layout_mode = 2
+text = "Valido dal 1-10-2025 al 15-10-2025"
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/Promo"]
+layout_mode = 2
+text = "Descrizione: Offerta valida per tutti i clienti fedeli"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button2" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
