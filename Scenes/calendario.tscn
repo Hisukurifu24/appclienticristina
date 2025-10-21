@@ -6,7 +6,8 @@
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_2x4ry"]
 
-[node name="Calendario" type="Panel"]
+[node name="Calendario" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -80,52 +81,65 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Vista Mese"]
+[node name="Panel" type="Panel" parent="VBoxContainer/Vista Mese"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Vista Mese/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Lun"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+[node name="Label2" type="Label" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Mar"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+[node name="Label3" type="Label" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Mer"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+[node name="Label4" type="Label" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Gio"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+[node name="Label5" type="Label" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Ven"
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+[node name="Label6" type="Label" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Sab"
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="VBoxContainer/Vista Mese/HBoxContainer2"]
+[node name="Label7" type="Label" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Dom"
 horizontal_alignment = 1
 
-[node name="Calendar" type="GridContainer" parent="VBoxContainer/Vista Mese"]
+[node name="Calendar" type="GridContainer" parent="VBoxContainer/Vista Mese/Panel/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 columns = 7

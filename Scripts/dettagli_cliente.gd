@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 @onready var photo: TextureRect = %Photo
 @onready var name_label: Label = %Nominativo

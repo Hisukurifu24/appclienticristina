@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyxk4dtwpyw8u"]
+[gd_scene load_steps=7 format=3 uid="uid://dyxk4dtwpyw8u"]
 
 [ext_resource type="Script" uid="uid://p0kujfncg5na" path="res://Scripts/nuovo_trattamento.gd" id="1_kewrg"]
 [ext_resource type="PackedScene" uid="uid://bdvpqvcid0n3i" path="res://Scenes/top_bar.tscn" id="2_q6rjq"]
 [ext_resource type="PackedScene" uid="uid://bsbyjq2gwp27q" path="res://Scenes/dettagli_cliente.tscn" id="3_hufil"]
+[ext_resource type="Texture2D" uid="uid://8mcmnumgfdpr" path="res://Assets/Images/Backgrounds/Unsplash/dark-bg.jpeg" id="5_kewrg"]
 [ext_resource type="Texture2D" uid="uid://ge7nav1tdscc" path="res://Assets/Images/icons/client_icon.tres" id="5_m74cp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q6rjq"]
@@ -15,6 +16,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kewrg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_right = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_kewrg")
+expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -34,28 +47,43 @@ title = "Trattamento"
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 25
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cliente:"
 
-[node name="ClientInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="ClientInput" type="LineEdit" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -63,15 +91,15 @@ size_flags_horizontal = 3
 placeholder_text = "Cerca..."
 caret_blink = true
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Trattamento:"
 
-[node name="TreatInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="TreatInput" type="LineEdit" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -79,27 +107,27 @@ size_flags_horizontal = 3
 placeholder_text = "Cerca..."
 caret_blink = true
 
-[node name="AddTreatButton" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="AddTreatButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Aggiungi"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Data"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "GG"
 
-[node name="DayInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="DayInput" type="SpinBox" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -110,11 +138,11 @@ alignment = 1
 custom_arrow_step = 1.0
 select_all_on_focus = true
 
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "MM"
 
-[node name="MonthInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="MonthInput" type="SpinBox" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -125,11 +153,11 @@ alignment = 1
 custom_arrow_step = 1.0
 select_all_on_focus = true
 
-[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "AAAA"
 
-[node name="YearInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="YearInput" type="SpinBox" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -140,20 +168,20 @@ alignment = 1
 custom_arrow_step = 1.0
 select_all_on_focus = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Prima del trattamento:"
 horizontal_alignment = 1
 
-[node name="Before" type="TextureRect" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Before" type="TextureRect" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
@@ -161,23 +189,23 @@ texture = ExtResource("5_m74cp")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AddBeforeButton" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="AddBeforeButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "AGGIUNGI FOTO"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Dopo il trattamento:"
 horizontal_alignment = 1
 
-[node name="After" type="TextureRect" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="After" type="TextureRect" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
@@ -185,7 +213,7 @@ texture = ExtResource("5_m74cp")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AddAfterButton" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="AddAfterButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2

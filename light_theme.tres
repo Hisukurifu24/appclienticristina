@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cuqlfxlpr1pgf"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cuqlfxlpr1pgf"]
 
 [ext_resource type="Texture2D" uid="uid://cnp3abhigug1y" path="res://Assets/Images/UI/Default/Transparent center/panel-transparent-center-015.png" id="1_86ju1"]
 [ext_resource type="Texture2D" uid="uid://y88m103s8anl" path="res://Assets/Images/UI/Default/Panel/panel-015.png" id="2_4bny6"]
@@ -28,6 +28,11 @@ texture = ExtResource("1_86ju1")
 region_rect = Rect2(5, 5, 38, 38)
 modulate_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p36p5"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qtgr"]
 texture = ExtResource("2_4bny6")
 texture_margin_left = 1.0
@@ -51,5 +56,6 @@ Button/styles/focus = SubResource("StyleBoxEmpty_4bny6")
 Button/styles/hover = SubResource("StyleBoxTexture_4bny6")
 Button/styles/normal = SubResource("StyleBoxTexture_p36p5")
 Button/styles/pressed = SubResource("StyleBoxTexture_v6ocn")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_p36p5")
 Panel/styles/panel = SubResource("StyleBoxTexture_3qtgr")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4bny6")

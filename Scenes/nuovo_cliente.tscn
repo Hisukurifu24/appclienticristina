@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://3nl5emrrykbp"]
+[gd_scene load_steps=6 format=3 uid="uid://3nl5emrrykbp"]
 
 [ext_resource type="PackedScene" uid="uid://bdvpqvcid0n3i" path="res://Scenes/top_bar.tscn" id="1_a3lyt"]
 [ext_resource type="Script" uid="uid://c6nyssmj8il3i" path="res://Scripts/nuovo_cliente.gd" id="1_o8i25"]
+[ext_resource type="Texture2D" uid="uid://8mcmnumgfdpr" path="res://Assets/Images/Backgrounds/Unsplash/dark-bg.jpeg" id="2_h3dyf"]
 [ext_resource type="PackedScene" uid="uid://53kxk7chwe1x" path="res://Scenes/home.tscn" id="3_o8i25"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o8i25"]
@@ -14,6 +15,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o8i25")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h3dyf")
+expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -36,25 +47,46 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 25
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="Photo" type="TextureRect" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Panel"]
+[node name="Photo" type="TextureRect" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/Panel"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 1
@@ -70,55 +102,55 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AddPhotoButton" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="AddPhotoButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Aggiungi foto"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Nominativo *"
 
-[node name="NameInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+[node name="NameInput" type="LineEdit" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 placeholder_text = "Nome e Cognome"
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer5"]
 layout_mode = 2
 text = "Email *"
 
-[node name="EmailInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
+[node name="EmailInput" type="LineEdit" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer5"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 placeholder_text = "esempio@esempio.com"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Data di Nascita *"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "GG"
 
-[node name="DayInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="DayInput" type="SpinBox" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -129,11 +161,11 @@ alignment = 1
 custom_arrow_step = 1.0
 select_all_on_focus = true
 
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "MM"
 
-[node name="MonthInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="MonthInput" type="SpinBox" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -144,11 +176,11 @@ alignment = 1
 custom_arrow_step = 1.0
 select_all_on_focus = true
 
-[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "AAAA"
 
-[node name="YearInput" type="SpinBox" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="YearInput" type="SpinBox" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -159,40 +191,40 @@ alignment = 1
 custom_arrow_step = 1.0
 select_all_on_focus = true
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer3"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 text = "Indirizzo"
 
-[node name="AddressInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer3"]
+[node name="AddressInput" type="LineEdit" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 placeholder_text = "Via Roma 15, Camposampiero (PD)"
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer4"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4"]
 layout_mode = 2
 text = "Numero di telefono"
 
-[node name="PhoneInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer4"]
+[node name="PhoneInput" type="LineEdit" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer4"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 placeholder_text = "333 1234 321"
 
-[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer6"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer6"]
 layout_mode = 2
 text = "Autocura"
 
-[node name="ProductInput" type="TextEdit" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer6"]
+[node name="ProductInput" type="TextEdit" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer6"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2

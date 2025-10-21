@@ -236,5 +236,19 @@
 			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
 			"nome": "Trattamento anti-età"
 		}
+	},
+	{
+		"cliente": "mario.rossi@email.com",
+		"data": {
+			"anno": 2025,
+			"giorno": 21,
+			"mese": 10
+		},
+		"foto_dopo": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_dopo.png",
+		"foto_prima": "user://client_photos/trattamenti/Mario Rossi_Trattamento anti-età_prima.png",
+		"tipo_trattamento": {
+			"descrizione": "Trattamento con acido ialuronico per ridurre le rughe e i segni del tempo",
+			"nome": "Trattamento anti-età"
+		}
 	}
 ]

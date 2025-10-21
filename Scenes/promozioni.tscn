@@ -6,7 +6,8 @@
 [sub_resource type="LabelSettings" id="LabelSettings_qlwfw"]
 font_size = 32
 
-[node name="Clienti" type="Panel"]
+[node name="Clienti" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,7 +21,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = 64.0
+offset_top = 28.0
 offset_right = -27.0
 offset_bottom = -27.0
 grow_horizontal = 2
@@ -44,26 +45,35 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Aggiungi Promozione"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="PromoList" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="PromoList" type="VBoxContainer" parent="VBoxContainer/Panel/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 25
 
-[node name="Promo" parent="VBoxContainer/ScrollContainer/MarginContainer/PromoList" instance=ExtResource("1_uc0w2")]
+[node name="Promo" parent="VBoxContainer/Panel/ScrollContainer/MarginContainer/PromoList" instance=ExtResource("1_uc0w2")]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/PromoList"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Panel/ScrollContainer/MarginContainer/PromoList"]
 layout_mode = 2

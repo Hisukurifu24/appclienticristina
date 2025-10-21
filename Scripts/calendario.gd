@@ -57,7 +57,7 @@ func _update_month_view() -> void:
 	]
 	month_label.text = "%s %d" % [month_names[current_date.month - 1], current_date.year]
 
-	var calendar: GridContainer = month_view.get_node("Calendar")
+	var calendar: GridContainer = get_node("%Calendar")
 	# Clear existing days
 	for child in calendar.get_children():
 		child.free()
