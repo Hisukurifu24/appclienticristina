@@ -6,8 +6,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_qlwfw"]
 font_size = 32
 
-[node name="Clienti" type="Control"]
-layout_mode = 3
+[node name="Clienti" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -2,7 +2,7 @@ class_name ClientManager
 extends Node
 
 var clients_photo_dir = "user://client_photos/"
-var default_icon = preload("res://Images/client_icon.tres")
+var default_icon = preload("res://Assets/Images/icons/client_icon.tres")
 
 var clienti: Array[Cliente] = []
 var selected_client: Cliente = null

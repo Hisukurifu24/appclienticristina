@@ -2,7 +2,7 @@ class_name TreatManager
 extends Node
 
 var clients_photo_dir = "user://client_photos/trattamenti/"
-var default_icon = preload("res://Images/icon.svg")
+var default_icon = preload("res://Assets/Images/icons/icon.svg")
 
 var log_trattamenti: Array[Trattamento] = []
 var tipi_trattamenti: Array[TipoTrattamento] = []

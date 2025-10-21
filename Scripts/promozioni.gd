@@ -68,7 +68,14 @@ func update_promo_list() -> void:
 			add_child(background)
 		)
 		promo_instance.get_node("%ShareButton").pressed.connect(func():
-			print("Condividi la promozione: %s" % promo_instance.get_node("%Title").text)
+			var share_text := "Guarda questa promozione!\n"
+			share_text += "%s\n%s\nValida dal %02d/%02d/%04d al %02d/%02d/%04d" % [
+				promo.titolo,
+				promo.descrizione,
+				promo.data_inizio.day, promo.data_inizio.month, promo.data_inizio.year,
+				promo.data_fine.day, promo.data_fine.month, promo.data_fine.year
+			]
+			share_on_whatsapp(share_text)
 		)
 		promo_list.add_child(promo_instance)
 		promo_list.add_child(HSeparator.new())
@@ -76,3 +83,14 @@ func update_promo_list() -> void:
 func _on_add_promo_button_pressed() -> void:
 	PromoManagerNode.selected_promo = null
 	get_tree().change_scene_to_file("res://Scenes/new_promozione.tscn")
+
+func share_on_whatsapp(text: String) -> void:
+	var encoded := text.uri_encode()
+	# Prefer the app if present (mobile), otherwise WhatsApp Web:
+	var app_url := "whatsapp://send?text=%s" % encoded
+	var web_url := "https://wa.me/?text=%s" % encoded
+
+	# Try app first; if it fails (e.g., on desktop), fall back to web:
+	var result := OS.shell_open(app_url)
+	if result != OK:
+		OS.shell_open(web_url)

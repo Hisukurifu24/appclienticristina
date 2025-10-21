@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cuqlfxlpr1pgf"]
+
+[ext_resource type="Texture2D" uid="uid://cnp3abhigug1y" path="res://Assets/Images/UI/Default/Transparent center/panel-transparent-center-015.png" id="1_86ju1"]
+[ext_resource type="Texture2D" uid="uid://y88m103s8anl" path="res://Assets/Images/UI/Default/Panel/panel-015.png" id="2_4bny6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8pgqc"]
+texture = ExtResource("2_4bny6")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+modulate_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4bny6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4bny6"]
+texture = ExtResource("1_86ju1")
+region_rect = Rect2(5, 5, 38, 38)
+modulate_color = Color(0.784314, 0.784314, 0.784314, 0.392157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p36p5"]
+texture = ExtResource("1_86ju1")
+region_rect = Rect2(5, 5, 38, 38)
+modulate_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6ocn"]
+texture = ExtResource("1_86ju1")
+region_rect = Rect2(5, 5, 38, 38)
+modulate_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qtgr"]
+texture = ExtResource("2_4bny6")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 40, 40)
+modulate_color = Color(0.393086, 0.393086, 0.393085, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bny6"]
+bg_color = Color(0.821789, 0.821789, 0.821788, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+BorderPanel/base_type = &"Panel"
+BorderPanel/styles/panel = SubResource("StyleBoxTexture_8pgqc")
+Button/styles/focus = SubResource("StyleBoxEmpty_4bny6")
+Button/styles/hover = SubResource("StyleBoxTexture_4bny6")
+Button/styles/normal = SubResource("StyleBoxTexture_p36p5")
+Button/styles/pressed = SubResource("StyleBoxTexture_v6ocn")
+Panel/styles/panel = SubResource("StyleBoxTexture_3qtgr")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4bny6")

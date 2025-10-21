@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bm1ydt1pqnac2"]
 
 [ext_resource type="Script" uid="uid://dwc8bxyo3crrh" path="res://Scripts/crop_image_dialog.gd" id="1_a2a5b"]
-[ext_resource type="Texture2D" uid="uid://bab5ql0qac4jt" path="res://Images/iconset.png" id="2_fso5c"]
+[ext_resource type="Texture2D" uid="uid://bab5ql0qac4jt" path="res://Assets/Images/icons/iconset.png" id="2_fso5c"]
 
 [node name="PopupCropper" type="Popup"]
 title = "Crop Image"

@@ -1,21 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://53kxk7chwe1x"]
+[gd_scene load_steps=13 format=3 uid="uid://53kxk7chwe1x"]
 
 [ext_resource type="Script" uid="uid://c0rodel4w5yx1" path="res://Scripts/home.gd" id="1_ibywg"]
-[ext_resource type="Texture2D" uid="uid://bab5ql0qac4jt" path="res://Images/iconset.png" id="2_1ey7h"]
+[ext_resource type="Texture2D" uid="uid://bab5ql0qac4jt" path="res://Assets/Images/icons/iconset.png" id="2_1ey7h"]
+[ext_resource type="Texture2D" uid="uid://8mcmnumgfdpr" path="res://Assets/Images/Backgrounds/Unsplash/dark-bg.jpeg" id="2_fhpuh"]
 [ext_resource type="PackedScene" uid="uid://d2exdckwfxks4" path="res://Scenes/clienti.tscn" id="2_o1ld7"]
-[ext_resource type="Texture2D" uid="uid://ge7nav1tdscc" path="res://Images/client_icon.tres" id="3_12ycv"]
-
-[sub_resource type="Gradient" id="Gradient_tt30a"]
-offsets = PackedFloat32Array(0.435065, 1)
-colors = PackedColorArray(0.729412, 0.572549, 0.2, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ey7h"]
-gradient = SubResource("Gradient_tt30a")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ey7h"]
-
-[sub_resource type="Theme" id="Theme_1ey7h"]
-Button/styles/normal = SubResource("StyleBoxEmpty_1ey7h")
+[ext_resource type="Texture2D" uid="uid://ge7nav1tdscc" path="res://Assets/Images/icons/client_icon.tres" id="3_12ycv"]
+[ext_resource type="Theme" uid="uid://6nuc68adpjnt" path="res://toggle_button.tres" id="4_fhpuh"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_12ycv"]
 
@@ -48,22 +38,14 @@ grow_vertical = 2
 script = ExtResource("1_ibywg")
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_1ey7h")
-
-[node name="Background2" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+texture = ExtResource("2_fhpuh")
+expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -97,7 +79,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_1ey7h")
+theme = ExtResource("4_fhpuh")
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_12ycv")
@@ -134,7 +116,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_1ey7h")
+theme = ExtResource("4_fhpuh")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_12ycv")
 
@@ -170,7 +152,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_1ey7h")
+theme = ExtResource("4_fhpuh")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_12ycv")
 
@@ -206,7 +188,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_1ey7h")
+theme = ExtResource("4_fhpuh")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_12ycv")
 
@@ -242,7 +224,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_1ey7h")
+theme = ExtResource("4_fhpuh")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_12ycv")
 

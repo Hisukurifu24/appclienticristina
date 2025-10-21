@@ -6,8 +6,7 @@
 font_size = 20
 outline_size = 1
 
-[node name="Clienti" type="Control"]
-layout_mode = 3
+[node name="Clienti" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,6 +35,7 @@ placeholder_text = "Cerca cliente..."
 [node name="Panel" type="Panel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_type_variation = &"BorderPanel"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Panel"]
 layout_mode = 1

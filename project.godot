@@ -31,6 +31,12 @@ window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
+[gui]
+
+theme/custom="uid://cuqlfxlpr1pgf"
+theme/custom_font="uid://ccc623s1o10n1"
+
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

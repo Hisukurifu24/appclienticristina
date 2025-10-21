@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdvpqvcid0n3i"]
+[gd_scene load_steps=5 format=3 uid="uid://bdvpqvcid0n3i"]
 
 [ext_resource type="Script" uid="uid://c5u8wkapj1fh3" path="res://Scripts/top_bar.gd" id="1_6umry"]
+[ext_resource type="Texture2D" uid="uid://dwwonsr7shhtn" path="res://Assets/Images/icons/back.svg" id="2_qoaop"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qoaop"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nk36g"]
 font_size = 32
@@ -22,7 +25,22 @@ theme_override_constants/separation = 25
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-text = "<"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qoaop")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qoaop")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Title" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true

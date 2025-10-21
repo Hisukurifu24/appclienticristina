@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqm1vshqlhjni" path="res://Scripts/statistiche.gd" id="1_bbuv4"]
 
-[node name="Statistiche" type="Control"]
-layout_mode = 3
+[node name="Statistiche" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

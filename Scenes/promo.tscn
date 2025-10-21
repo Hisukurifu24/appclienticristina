@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://p0v77ppouyta"]
 
 [ext_resource type="Script" uid="uid://bvhbboqtknird" path="res://Scripts/promo.gd" id="1_76huy"]
-[ext_resource type="Texture2D" uid="uid://w3daw3drddqp" path="res://Images/icons/more.svg" id="1_a3xuv"]
-[ext_resource type="Texture2D" uid="uid://dfaj40smvop5t" path="res://Images/icons/share.svg" id="2_76huy"]
+[ext_resource type="Texture2D" uid="uid://w3daw3drddqp" path="res://Assets/Images/icons/more.svg" id="1_a3xuv"]
+[ext_resource type="Texture2D" uid="uid://dfaj40smvop5t" path="res://Assets/Images/icons/share.svg" id="2_76huy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uc0w2"]
 font_size = 24
@@ -10,27 +10,55 @@ font_size = 24
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ifyw"]
 
 [node name="Promo" type="VBoxContainer"]
+offset_right = 766.0
+offset_bottom = 88.0
 size_flags_horizontal = 3
 script = ExtResource("1_76huy")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "🎉  Sconto 20% sui trattamenti corpo"
 label_settings = SubResource("LabelSettings_uc0w2")
 
-[node name="MoreButton" type="Button" parent="HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(25, 25)
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer3"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DateLabel" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Valido dal 1-10-2025 al 15-10-2025"
+
+[node name="Description" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 2
+text = "Descrizione: Offerta valida per tutti i clienti fedeli"
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MoreButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7ifyw")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MoreButton"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/MoreButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,33 +69,15 @@ texture = ExtResource("1_a3xuv")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="DateLabel" type="Label" parent="HBoxContainer2/VBoxContainer"]
+[node name="ShareButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-text = "Valido dal 1-10-2025 al 15-10-2025"
-
-[node name="Description" type="Label" parent="HBoxContainer2/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "Descrizione: Offerta valida per tutti i clienti fedeli"
-autowrap_mode = 2
-
-[node name="ShareButton" type="Button" parent="HBoxContainer2"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7ifyw")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/ShareButton"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/ShareButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,3 +87,6 @@ grow_vertical = 2
 texture = ExtResource("2_76huy")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2

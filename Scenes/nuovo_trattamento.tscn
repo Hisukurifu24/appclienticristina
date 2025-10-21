@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://p0kujfncg5na" path="res://Scripts/nuovo_trattamento.gd" id="1_kewrg"]
 [ext_resource type="PackedScene" uid="uid://bdvpqvcid0n3i" path="res://Scenes/top_bar.tscn" id="2_q6rjq"]
 [ext_resource type="PackedScene" uid="uid://bsbyjq2gwp27q" path="res://Scenes/dettagli_cliente.tscn" id="3_hufil"]
-[ext_resource type="Texture2D" uid="uid://ge7nav1tdscc" path="res://Images/client_icon.tres" id="5_m74cp"]
+[ext_resource type="Texture2D" uid="uid://ge7nav1tdscc" path="res://Assets/Images/icons/client_icon.tres" id="5_m74cp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q6rjq"]
 font_color = Color(1, 0.3241, 0.258944, 1)
