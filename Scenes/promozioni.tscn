@@ -37,7 +37,7 @@ label_settings = SubResource("LabelSettings_qlwfw")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="AddPromoButton" type="Button" parent="VBoxContainer"]
+[node name="AddPromoButton" type="Button" parent="VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

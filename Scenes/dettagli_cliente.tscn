@@ -165,7 +165,7 @@ layout_mode = 2
 text = "Trattamenti"
 label_settings = SubResource("LabelSettings_fhxkj")
 
-[node name="AddTreatButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer7"]
+[node name="AddTreatButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer7" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -179,7 +179,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="DeleteButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="DeleteButton" type="Button" parent="VBoxContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
@@ -187,7 +187,7 @@ size_flags_horizontal = 6
 theme_override_styles/normal = SubResource("StyleBoxFlat_fhxkj")
 text = "ELIMINA CLIENTE"
 
-[node name="ModifyButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="ModifyButton" type="Button" parent="VBoxContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

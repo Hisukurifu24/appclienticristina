@@ -8,7 +8,6 @@ func _ready():
 		inactive_clients_control.get_node("Clienti").visible = not inactive_clients_control.get_node("Clienti").visible
 	)
 	var clienti_inattivi = get_inactive_clients(30)
-	print("Clienti inattivi da più di 30 giorni: ", clienti_inattivi.size())
 	for cliente in clienti_inattivi:
 		var label = Label.new()
 		label.text = cliente.nominativo

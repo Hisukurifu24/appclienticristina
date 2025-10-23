@@ -22,6 +22,7 @@ TreatManagerNode="*res://Scripts/TreatManager.gd"
 PromoManagerNode="*res://Scripts/PromoManager.gd"
 EventManagerNode="*res://Scripts/EventManager.gd"
 SettingsManagerNode="*res://Scripts/SettingsManager.gd"
+SoundManagerNode="*res://Scripts/SoundManager.gd"
 
 [display]
 
@@ -30,6 +31,10 @@ window/size/viewport_height=1024
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
+
+[global_group]
+
+Buttons=""
 
 [gui]
 

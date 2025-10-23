@@ -88,7 +88,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Cerca..."
+placeholder_text = "Mario Rossi"
 caret_blink = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
@@ -104,10 +104,10 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Cerca..."
+placeholder_text = "Massaggio"
 caret_blink = true
 
-[node name="AddTreatButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="AddTreatButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Aggiungi"
@@ -189,7 +189,7 @@ texture = ExtResource("5_m74cp")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AddBeforeButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="AddBeforeButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -213,7 +213,7 @@ texture = ExtResource("5_m74cp")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AddAfterButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="AddAfterButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -230,7 +230,7 @@ text = "This is an error"
 label_settings = SubResource("LabelSettings_q6rjq")
 horizontal_alignment = 1
 
-[node name="SaveButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="SaveButton" type="Button" parent="VBoxContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

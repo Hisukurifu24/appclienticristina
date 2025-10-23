@@ -75,7 +75,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ClientButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer"]
+[node name="ClientButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -112,7 +112,7 @@ text = "CLIENTI"
 label_settings = SubResource("LabelSettings_2ayvv")
 horizontal_alignment = 1
 
-[node name="PromoButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer"]
+[node name="PromoButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -148,7 +148,7 @@ text = "PROMOZIONI"
 label_settings = SubResource("LabelSettings_2ayvv")
 horizontal_alignment = 1
 
-[node name="CalButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer"]
+[node name="CalButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -184,7 +184,7 @@ text = "CALENDARIO"
 label_settings = SubResource("LabelSettings_2ayvv")
 horizontal_alignment = 1
 
-[node name="StatButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer"]
+[node name="StatButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -220,7 +220,7 @@ text = "STATISTICHE"
 label_settings = SubResource("LabelSettings_2ayvv")
 horizontal_alignment = 1
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer/MenuBar/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

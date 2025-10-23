@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cuqlfxlpr1pgf"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://cuqlfxlpr1pgf"]
 
 [ext_resource type="Texture2D" uid="uid://cnp3abhigug1y" path="res://Assets/Images/UI/Default/Transparent center/panel-transparent-center-015.png" id="1_86ju1"]
 [ext_resource type="Texture2D" uid="uid://y88m103s8anl" path="res://Assets/Images/UI/Default/Panel/panel-015.png" id="2_4bny6"]
+[ext_resource type="Texture2D" uid="uid://bav76b53xdk2x" path="res://Assets/Images/icons/toggle_on.svg" id="3_v6ocn"]
+[ext_resource type="Texture2D" uid="uid://c1gjrik8ebbkk" path="res://Assets/Images/icons/toggle_off.svg" id="4_3qtgr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8pgqc"]
 texture = ExtResource("2_4bny6")
@@ -28,6 +30,16 @@ texture = ExtResource("1_86ju1")
 region_rect = Rect2(5, 5, 38, 38)
 modulate_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6ocn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qtgr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6can8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p36p5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8pgqc"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p36p5"]
 content_margin_left = 5.0
 content_margin_right = 5.0
@@ -41,6 +53,11 @@ texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 region_rect = Rect2(4, 4, 40, 40)
 modulate_color = Color(0.393086, 0.393086, 0.393085, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6ocn"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bny6"]
 bg_color = Color(0.821789, 0.821789, 0.821788, 1)
@@ -56,6 +73,15 @@ Button/styles/focus = SubResource("StyleBoxEmpty_4bny6")
 Button/styles/hover = SubResource("StyleBoxTexture_4bny6")
 Button/styles/normal = SubResource("StyleBoxTexture_p36p5")
 Button/styles/pressed = SubResource("StyleBoxTexture_v6ocn")
+CheckButton/constants/icon_max_width = 50
+CheckButton/icons/checked = ExtResource("3_v6ocn")
+CheckButton/icons/unchecked = ExtResource("4_3qtgr")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_v6ocn")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_3qtgr")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_6can8")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_p36p5")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_8pgqc")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_p36p5")
 Panel/styles/panel = SubResource("StyleBoxTexture_3qtgr")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_v6ocn")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4bny6")

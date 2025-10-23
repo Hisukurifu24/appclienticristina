@@ -24,6 +24,7 @@ func load_selected_event():
 		year_input.value = event.data.year
 
 func show_error(message: String):
+	SoundManagerNode.play_sound("error")
 	error_label.text = message
 	error_label.visible = true
 	await get_tree().create_timer(3.0).timeout

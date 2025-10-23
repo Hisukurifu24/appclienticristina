@@ -1,1 +1,128 @@
-[{"data_fine":{"day":1,"month":12,"year":2025},"data_inizio":{"day":15,"month":10,"year":2025},"descrizione":"Massaggio rilassante di 60 minuti + trattamento viso idratante. Perfetto per combattere lo stress e preparare la pelle ai primi freddi.","titolo":"Pacchetto Relax Autunnale"},{"data_fine":{"day":31,"month":12,"year":2025},"data_inizio":{"day":1,"month":10,"year":2025},"descrizione":"Sconto del 20% su tutti i trattamenti per studenti universitari. Valido dal lunedì al giovedì, presentando tessera universitaria.","titolo":"Sconto Studenti -20%"},{"data_fine":{"day":15,"month":12,"year":2025},"data_inizio":{"day":1,"month":11,"year":2025},"descrizione":"Prenota manicure e pedicure insieme e risparmia 15€! Include smalto semipermanente e trattamento cuticole professionale.","titolo":"Manicure + Pedicure Combo"},{"data_fine":{"day":1,"month":12,"year":2025},"data_inizio":{"day":25,"month":11,"year":2025},"descrizione":"Mega sconto del 30% su tutti i pacchetti benessere durante il Black Friday. Include massaggi, trattamenti viso e corpo.","titolo":"Black Friday Beauty"},{"data_fine":{"day":31,"month":1,"year":2026},"data_inizio":{"day":1,"month":10,"year":2025},"descrizione":"Pacchetto completo anti-età con radiofrequenza, siero lifting e maschera al collagene. Risultati visibili dalla prima seduta.","titolo":"Trattamento Anti-Età Premium"},{"data_fine":{"day":28,"month":2,"year":2026},"data_inizio":{"day":1,"month":12,"year":2025},"descrizione":"Prenota ora il tuo pacchetto depilazione laser per l'estate 2026. 6 sedute al prezzo di 4. Tecnologia di ultima generazione.","titolo":"Depilazione Laser Estate 2026"},{"data_fine":{"day":31,"month":3,"year":2026},"data_inizio":{"day":14,"month":2,"year":2026},"descrizione":"Invita un'amica e goditi una giornata spa completa per due persone. Include massaggio di coppia, trattamento viso e aperitivo wellness.","titolo":"Giornata Spa per Due"},{"data_fine":{"day":30,"month":6,"year":2026},"data_inizio":{"day":1,"month":1,"year":2026},"descrizione":"Preparati al tuo giorno speciale! Pacchetto completo con trattamenti viso, corpo, manicure, pedicure e prova trucco. Consulenza gratuita.","titolo":"Pacchetto Sposa"},{"data_fine":{"day":20,"month":11,"year":2025},"data_inizio":{"day":20,"month":10,"year":2025},"descrizione":"Prova il nostro nuovo massaggio con pietre vulcaniche calde. 50 minuti di puro relax per sciogliere tensioni e stress. Sconto lancio -25%.","titolo":"Novità: Massaggio Hot Stone"}]
+[
+	{
+		"data_fine": {
+			"day": 1,
+			"month": 12,
+			"year": 2025
+		},
+		"data_inizio": {
+			"day": 15,
+			"month": 10,
+			"year": 2025
+		},
+		"descrizione": "Massaggio rilassante di 60 minuti + trattamento viso idratante. Perfetto per combattere lo stress e preparare la pelle ai primi freddi.",
+		"titolo": "Pacchetto Relax Autunnale"
+	},
+	{
+		"data_fine": {
+			"day": 31,
+			"month": 12,
+			"year": 2025
+		},
+		"data_inizio": {
+			"day": 1,
+			"month": 10,
+			"year": 2025
+		},
+		"descrizione": "Sconto del 20% su tutti i trattamenti per studenti universitari. Valido dal lunedì al giovedì, presentando tessera universitaria.",
+		"titolo": "Sconto Studenti -20%"
+	},
+	{
+		"data_fine": {
+			"day": 15,
+			"month": 12,
+			"year": 2025
+		},
+		"data_inizio": {
+			"day": 1,
+			"month": 11,
+			"year": 2025
+		},
+		"descrizione": "Prenota manicure e pedicure insieme e risparmia 15€! Include smalto semipermanente e trattamento cuticole professionale.",
+		"titolo": "Manicure + Pedicure Combo"
+	},
+	{
+		"data_fine": {
+			"day": 1,
+			"month": 12,
+			"year": 2025
+		},
+		"data_inizio": {
+			"day": 25,
+			"month": 11,
+			"year": 2025
+		},
+		"descrizione": "Mega sconto del 30% su tutti i pacchetti benessere durante il Black Friday. Include massaggi, trattamenti viso e corpo.",
+		"titolo": "Black Friday Beauty"
+	},
+	{
+		"data_fine": {
+			"day": 31,
+			"month": 1,
+			"year": 2026
+		},
+		"data_inizio": {
+			"day": 1,
+			"month": 10,
+			"year": 2025
+		},
+		"descrizione": "Pacchetto completo anti-età con radiofrequenza, siero lifting e maschera al collagene. Risultati visibili dalla prima seduta.",
+		"titolo": "Trattamento Anti-Età Premium"
+	},
+	{
+		"data_fine": {
+			"day": 28,
+			"month": 2,
+			"year": 2026
+		},
+		"data_inizio": {
+			"day": 1,
+			"month": 12,
+			"year": 2025
+		},
+		"descrizione": "Prenota ora il tuo pacchetto depilazione laser per l'estate 2026. 6 sedute al prezzo di 4. Tecnologia di ultima generazione.",
+		"titolo": "Depilazione Laser Estate 2026"
+	},
+	{
+		"data_fine": {
+			"day": 31,
+			"month": 3,
+			"year": 2026
+		},
+		"data_inizio": {
+			"day": 14,
+			"month": 2,
+			"year": 2026
+		},
+		"descrizione": "Invita un'amica e goditi una giornata spa completa per due persone. Include massaggio di coppia, trattamento viso e aperitivo wellness.",
+		"titolo": "Giornata Spa per Due"
+	},
+	{
+		"data_fine": {
+			"day": 30,
+			"month": 6,
+			"year": 2026
+		},
+		"data_inizio": {
+			"day": 1,
+			"month": 1,
+			"year": 2026
+		},
+		"descrizione": "Preparati al tuo giorno speciale! Pacchetto completo con trattamenti viso, corpo, manicure, pedicure e prova trucco. Consulenza gratuita.",
+		"titolo": "Pacchetto Sposa"
+	},
+	{
+		"data_fine": {
+			"day": 20,
+			"month": 11,
+			"year": 2025
+		},
+		"data_inizio": {
+			"day": 20,
+			"month": 10,
+			"year": 2025
+		},
+		"descrizione": "Prova il nostro nuovo massaggio con pietre vulcaniche calde. 50 minuti di puro relax per sciogliere tensioni e stress. Sconto lancio -25%.",
+		"titolo": "Novità: Massaggio Hot Stone"
+	}
+]

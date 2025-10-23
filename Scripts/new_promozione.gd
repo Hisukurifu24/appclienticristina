@@ -35,6 +35,7 @@ func load_selected_promo():
 		end_year.value = promo.data_fine.year
 
 func show_error(message: String):
+	SoundManagerNode.play_sound("error")
 	error_label.text = message
 	error_label.visible = true
 	await get_tree().create_timer(3.0).timeout

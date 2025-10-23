@@ -1,25 +1,65 @@
-[gd_scene format=3 uid="uid://csedamyclk4jh"]
+[gd_scene load_steps=2 format=3 uid="uid://xa68lmtjhr0g"]
 
-[node name="Impostazioni" type="Panel"]
+[ext_resource type="Script" uid="uid://tbxqovk2djgi" path="res://Scripts/impostazioni.gd" id="1_twdth"]
+
+[node name="Impostazioni" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_twdth")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = 41.0
-offset_right = -27.0
-offset_bottom = -27.0
+offset_left = 31.0
+offset_top = 33.0
+offset_right = -31.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "IMPOSTAZIONI"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SoundToggle" type="CheckButton" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer" groups=["Buttons"]]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Suoni"
+
+[node name="VibrationToggle" type="CheckButton" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer" groups=["Buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+button_pressed = true
+text = "Vibrazione"

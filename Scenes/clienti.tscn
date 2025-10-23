@@ -82,7 +82,7 @@ text = "Data di Nascita"
 label_settings = SubResource("LabelSettings_rmyiq")
 horizontal_alignment = 1
 
-[node name="NewClientButton" type="Button" parent="VBoxContainer"]
+[node name="NewClientButton" type="Button" parent="VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

@@ -102,7 +102,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AddPhotoButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="AddPhotoButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
@@ -241,7 +241,7 @@ text = "This is an error"
 label_settings = SubResource("LabelSettings_o8i25")
 horizontal_alignment = 1
 
-[node name="SaveButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="SaveButton" type="Button" parent="VBoxContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

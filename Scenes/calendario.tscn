@@ -31,7 +31,7 @@ theme_override_constants/separation = 25
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="VistaMeseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="VistaMeseButton" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -42,7 +42,7 @@ button_pressed = true
 button_group = SubResource("ButtonGroup_2x4ry")
 text = "VISTA MESE"
 
-[node name="VistaEventiButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="VistaEventiButton" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -55,7 +55,7 @@ text = "VISTA EVENTI"
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="PreviousMonthButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="PreviousMonthButton" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -70,7 +70,7 @@ text = "GENNAIO 2025"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NextMonthButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="NextMonthButton" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["Buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -144,7 +144,7 @@ layout_mode = 2
 size_flags_vertical = 3
 columns = 7
 
-[node name="AddEventButton" type="Button" parent="VBoxContainer/Vista Mese"]
+[node name="AddEventButton" type="Button" parent="VBoxContainer/Vista Mese" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

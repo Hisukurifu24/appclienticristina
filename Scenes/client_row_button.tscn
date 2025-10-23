@@ -4,7 +4,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfsgw"]
 
-[node name="Row" type="Button"]
+[node name="Row" type="Button" groups=["Buttons"]]
 custom_minimum_size = Vector2(0, 100)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mfsgw")
 

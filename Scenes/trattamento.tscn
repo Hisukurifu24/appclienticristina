@@ -218,7 +218,7 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="DeleteButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="DeleteButton" type="Button" parent="VBoxContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2

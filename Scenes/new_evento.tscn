@@ -179,7 +179,7 @@ text = "This is an error"
 label_settings = SubResource("LabelSettings_q6rjq")
 horizontal_alignment = 1
 
-[node name="SaveButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="SaveButton" type="Button" parent="VBoxContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

@@ -108,6 +108,7 @@ func _on_image_cropped(cropped_texture: Texture2D):
 	photo.texture = cropped_texture
 
 func _show_error_message(message: String):
+	SoundManagerNode.play_sound("error")
 	error_label.text = message
 	error_label.visible = true
 	# Optionally, you can hide the error message after a few seconds
