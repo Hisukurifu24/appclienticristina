@@ -2,6 +2,8 @@ class_name TreatManager
 extends Node
 
 var clients_photo_dir = "user://client_photos/trattamenti/"
+var trattamenti_data_file = "user://trattamenti.json"
+var tipi_trattamento_data_file = "user://tipi-trattamento.json"
 var default_icon = preload("res://Assets/Images/icons/icon.svg")
 
 var log_trattamenti: Array[Trattamento] = []
@@ -27,22 +29,52 @@ func load_image_texture(path: String) -> Texture2D:
 	if path.begins_with("res://"):
 		return load(path)
 	
+	# On Android, handle content:// URIs by copying to temp file first
+	var final_path = path
+	
+	if OS.get_name() == "Android" and path.begins_with("content://"):
+		# Copy to temporary location
+		var temp_dir = OS.get_user_data_dir() + "/temp/"
+		DirAccess.make_dir_recursive_absolute(temp_dir)
+		var temp_file = temp_dir + "temp_treat_" + str(Time.get_ticks_msec()) + ".jpg"
+		
+		# Read from content URI and write to temp file
+		var source = FileAccess.open(path, FileAccess.READ)
+		if source:
+			var data = source.get_buffer(source.get_length())
+			source.close()
+			
+			var dest = FileAccess.open(temp_file, FileAccess.WRITE)
+			if dest:
+				dest.store_buffer(data)
+				dest.close()
+				final_path = temp_file
+			else:
+				push_error("Failed to write temp file for: " + path)
+				return default_icon
+		else:
+			push_error("Failed to open content URI: " + path)
+			return default_icon
+	
 	# Load user directory files as ImageTexture
 	var image = Image.new()
-	var error = image.load(path)
+	var error = image.load(final_path)
+	
 	if error == OK:
 		var texture = ImageTexture.new()
 		texture.set_image(image)
 		return texture
 	else:
-		push_error("Failed to load image from path: " + path)
+		push_error("Failed to load image from path: " + final_path)
 		return default_icon
 
 func loadTrattamenti():
-	if FileAccess.file_exists("res://Data/trattamenti.json"):
-		var file = FileAccess.open("res://Data/trattamenti.json", FileAccess.READ)
+	# First check if user data exists
+	if FileAccess.file_exists(trattamenti_data_file):
+		var file = FileAccess.open(trattamenti_data_file, FileAccess.READ)
 		if file:
 			var data = file.get_as_text()
+			file.close()
 			var json = JSON.new()
 			var parse_result = json.parse(data)
 			if parse_result == OK:
@@ -73,15 +105,56 @@ func loadTrattamenti():
 					trattamento.foto_dopo = load_image_texture(foto_dopo_path)
 					
 					log_trattamenti.append(trattamento)
-			file.close()
-	else:
-		print("File trattamenti.json non trovato.")
-
-func loadTipiTrattamenti():
-	if FileAccess.file_exists("res://Data/tipi-trattamento.json"):
-		var file = FileAccess.open("res://Data/tipi-trattamento.json", FileAccess.READ)
+			print("Loaded ", log_trattamenti.size(), " treatments from user data")
+	# If no user data, try to load from default res:// location (first time only)
+	elif FileAccess.file_exists("res://Data/trattamenti.json"):
+		print("Loading initial treatments from res://Data/trattamenti.json")
+		var file = FileAccess.open("res://Data/trattamenti.json", FileAccess.READ)
 		if file:
 			var data = file.get_as_text()
+			file.close()
+			var json = JSON.new()
+			var parse_result = json.parse(data)
+			if parse_result == OK:
+				log_trattamenti = []
+				for trattamento_data in json.data:
+					var trattamento = Trattamento.new()
+					
+					# Create TipoTrattamento from dictionary data
+					var tipo_dict = trattamento_data.get("tipo_trattamento", {})
+					var tipo_trattamento = TipoTrattamento.new()
+					tipo_trattamento.nome = tipo_dict.get("nome", "")
+					tipo_trattamento.descrizione = tipo_dict.get("descrizione", "")
+					trattamento.tipo_trattamento = tipo_trattamento
+					
+					trattamento.cliente = ClientManagerNode.getClient(trattamento_data.get("cliente", ""))
+					
+					# Create Date object from JSON data
+					var data_dict = trattamento_data.get("data", {})
+					var day = int(data_dict.get("giorno", 1))
+					var month = int(data_dict.get("mese", 1))
+					var year = int(data_dict.get("anno", 2000))
+					trattamento.data = Date.new(day, month, year)
+
+					var foto_prima_path = trattamento_data.get("foto_prima", "")
+					trattamento.foto_prima = load_image_texture(foto_prima_path)
+					
+					var foto_dopo_path = trattamento_data.get("foto_dopo", "")
+					trattamento.foto_dopo = load_image_texture(foto_dopo_path)
+					
+					log_trattamenti.append(trattamento)
+			# Save to user:// so we have a writable copy
+			saveTrattamenti()
+	else:
+		print("No treatment data found.")
+
+func loadTipiTrattamenti():
+	# First check if user data exists
+	if FileAccess.file_exists(tipi_trattamento_data_file):
+		var file = FileAccess.open(tipi_trattamento_data_file, FileAccess.READ)
+		if file:
+			var data = file.get_as_text()
+			file.close()
 			var json = JSON.new()
 			var parse_result = json.parse(data)
 			if parse_result == OK:
@@ -91,9 +164,27 @@ func loadTipiTrattamenti():
 					tipo.nome = tipo_data.get("nome", "")
 					tipo.descrizione = tipo_data.get("descrizione", "")
 					tipi_trattamenti.append(tipo)
+			print("Loaded ", tipi_trattamenti.size(), " treatment types from user data")
+	# If no user data, try to load from default res:// location (first time only)
+	elif FileAccess.file_exists("res://Data/tipi-trattamento.json"):
+		print("Loading initial treatment types from res://Data/tipi-trattamento.json")
+		var file = FileAccess.open("res://Data/tipi-trattamento.json", FileAccess.READ)
+		if file:
+			var data = file.get_as_text()
 			file.close()
+			var json = JSON.new()
+			var parse_result = json.parse(data)
+			if parse_result == OK:
+				tipi_trattamenti = []
+				for tipo_data in json.data:
+					var tipo = TipoTrattamento.new()
+					tipo.nome = tipo_data.get("nome", "")
+					tipo.descrizione = tipo_data.get("descrizione", "")
+					tipi_trattamenti.append(tipo)
+			# Save to user:// so we have a writable copy
+			saveTipiTrattamenti()
 	else:
-		push_error("File tipi-trattamento.json non trovato.")
+		print("No treatment type data found.")
 
 func getAllTreatOfClient(cliente: Cliente) -> Array[Trattamento]:
 	var trattamenti_cliente: Array[Trattamento] = []
@@ -146,7 +237,7 @@ func deleteTreatment(trattamento: Trattamento):
 		saveTrattamenti()
 
 func saveTrattamenti():
-	var file = FileAccess.open("res://Data/trattamenti.json", FileAccess.WRITE)
+	var file = FileAccess.open(trattamenti_data_file, FileAccess.WRITE)
 	if file:
 		var data_array = []
 		for trattamento in log_trattamenti:
@@ -193,7 +284,7 @@ func addTipoTrattamento(tipo: TipoTrattamento):
 	saveTipiTrattamenti()
 
 func saveTipiTrattamenti():
-	var file = FileAccess.open("res://Data/tipi-trattamento.json", FileAccess.WRITE)
+	var file = FileAccess.open(tipi_trattamento_data_file, FileAccess.WRITE)
 	if file:
 		var data_array = []
 		for tipo in tipi_trattamenti:

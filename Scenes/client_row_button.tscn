@@ -6,6 +6,7 @@
 
 [node name="Row" type="Button" groups=["Buttons"]]
 custom_minimum_size = Vector2(0, 100)
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mfsgw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

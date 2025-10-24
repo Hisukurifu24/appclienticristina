@@ -29,15 +29,11 @@ func update_promo_list() -> void:
 			background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 			background.color = Color.TRANSPARENT
 			background.mouse_filter = Control.MOUSE_FILTER_STOP
-			
-			var popup = VBoxContainer.new()
-			var edit_button = Button.new()
-			edit_button.text = "Modifica"
-			var delete_button = Button.new()
-			delete_button.text = "Elimina"
-			popup.add_child(edit_button)
-			popup.add_child(delete_button)
-			
+
+			var popup: PanelContainer = preload("res://Scenes/promo_context_menu.tscn").instantiate()
+			var edit_button: Button = popup.get_node("%EditButton")
+			var delete_button: Button = popup.get_node("%DeleteButton")
+
 			edit_button.pressed.connect(func():
 				background.queue_free()
 				PromoManagerNode.selected_promo = promo

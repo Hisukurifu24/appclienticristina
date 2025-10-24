@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dytgl61vmqp0v"]
 
 [node name="CalendarEventDay" type="PanelContainer"]
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -30,4 +31,5 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+mouse_filter = 1
 text = "Aggiungi evento"

@@ -16,4 +16,5 @@ text = "12-02-2001"
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 10
+mouse_filter = 1
 text = "VEDI DETTAGLI"

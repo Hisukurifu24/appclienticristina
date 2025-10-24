@@ -7,7 +7,7 @@ extends Popup
 
 var start_pos: Vector2
 var dragging = false
-var image_bounds: Rect2  # Store the bounds of the displayed image
+var image_bounds: Rect2 # Store the bounds of the displayed image
 
 
 signal image_cropped(cropped_image: Texture2D)
@@ -65,18 +65,25 @@ func _input(event):
 		var drag_offset = mouse_pos - start_pos
 		var new_position = crop_overlay.position + drag_offset
 		crop_overlay.position = _constrain_to_image_bounds(new_position)
-		start_pos = mouse_pos  # Update start_pos for next frame
+		start_pos = mouse_pos # Update start_pos for next frame
 	# Single finger drag (crop box) for mobile
 	elif event is InputEventScreenTouch:
 		if event.pressed:
+			# Convert global touch position to local position relative to image_preview
+			var local_pos = image_preview.global_position
+			var touch_pos = event.position - local_pos
 			dragging = true
-			start_pos = event.position
+			start_pos = touch_pos
 		else:
 			dragging = false
 	elif event is InputEventScreenDrag and dragging:
-		var drag_offset = event.position - start_pos
-		var new_position = start_pos + drag_offset
+		# Convert global drag position to local position relative to image_preview
+		var local_pos = image_preview.global_position
+		var touch_pos = event.position - local_pos
+		var drag_offset = touch_pos - start_pos
+		var new_position = crop_overlay.position + drag_offset
 		crop_overlay.position = _constrain_to_image_bounds(new_position)
+		start_pos = touch_pos # Update start_pos for next frame
 
 	# Pinch zoom (optional for mobile)
 	if event is InputEventMagnifyGesture:

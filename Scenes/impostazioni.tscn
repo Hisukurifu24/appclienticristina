@@ -11,19 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_twdth")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = 33.0
-offset_right = -31.0
-offset_bottom = -33.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,29 +23,45 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "IMPOSTAZIONI"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 3
 
-[node name="SoundToggle" type="CheckButton" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer" groups=["Buttons"]]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="SoundToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 button_pressed = true
 text = "Suoni"
 
-[node name="VibrationToggle" type="CheckButton" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer" groups=["Buttons"]]
+[node name="VibrationToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" groups=["Buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2

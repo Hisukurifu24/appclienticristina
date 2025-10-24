@@ -184,28 +184,45 @@ func on_add_treat_button_pressed():
 	)
 
 func popup_file_dialog(preview_node: TextureRect):
-	var file_dialog = FileDialog.new()
-	file_dialog.access = FileDialog.ACCESS_FILESYSTEM
-	file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
-	file_dialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
-	# Add more image format support
-	file_dialog.filters = [
-		"*.png ; PNG Image",
-		"*.jpg ; JPEG Image",
-		"*.jpeg ; JPEG Image",
-		"*.bmp ; BMP Image",
-		"*.webp ; WebP Image",
-		"*.tga ; TGA Image",
-		"*.svg ; SVG Image",
-	]
-	add_child(file_dialog)
-	file_dialog.popup_centered_ratio(0.6)
-	file_dialog.file_selected.connect(func(path):
-		preview_node.texture = TreatManagerNode.load_image_texture(path)
-	)
-	file_dialog.close_requested.connect(func():
-		file_dialog.queue_free()
-	)
+	# Check if we're on Android/mobile and use native file picker
+	if OS.get_name() == "Android" or OS.get_name() == "iOS":
+		# Use native file dialog for mobile
+		DisplayServer.file_dialog_show(
+			"Seleziona Foto", # Title
+			OS.get_system_dir(OS.SYSTEM_DIR_PICTURES), # Default path
+			"", # Filename (empty for open dialog)
+			false, # Show hidden files
+			DisplayServer.FILE_DIALOG_MODE_OPEN_FILE, # Mode
+			["*.png", "*.jpg", "*.jpeg", "*.bmp", "*.webp"], # Filters
+			func(status: bool, selected_paths: PackedStringArray, _selected_filter_index: int):
+				if status and selected_paths.size() > 0:
+					preview_node.texture = TreatManagerNode.load_image_texture(selected_paths[0])
+		)
+	else:
+		# Use standard FileDialog for desktop
+		var file_dialog = FileDialog.new()
+		file_dialog.access = FileDialog.ACCESS_FILESYSTEM
+		file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+		file_dialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
+		# Add more image format support
+		file_dialog.filters = [
+			"*.png ; PNG Image",
+			"*.jpg ; JPEG Image",
+			"*.jpeg ; JPEG Image",
+			"*.bmp ; BMP Image",
+			"*.webp ; WebP Image",
+			"*.tga ; TGA Image",
+			"*.svg ; SVG Image",
+		]
+		add_child(file_dialog)
+		file_dialog.popup_centered_ratio(0.6)
+		file_dialog.file_selected.connect(func(path):
+			preview_node.texture = TreatManagerNode.load_image_texture(path)
+		)
+		file_dialog.close_requested.connect(func():
+			file_dialog.queue_free()
+		)
+
 
 func show_error(message: String):
 	SoundManagerNode.play_sound("error")

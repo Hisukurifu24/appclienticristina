@@ -21,12 +21,18 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = 41.0
+offset_top = 24.0
 offset_right = -27.0
 offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "CALENDARIO"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -160,6 +166,8 @@ size_flags_vertical = 3
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Vista Eventi"]
 layout_mode = 2
 size_flags_vertical = 3
+follow_focus = true
+scroll_deadzone = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Vista Eventi/ScrollContainer"]
 layout_mode = 2

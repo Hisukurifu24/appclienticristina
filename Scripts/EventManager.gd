@@ -1,6 +1,7 @@
 extends Node
 class_name EventManager
 
+var eventi_data_file = "user://eventi.json"
 var eventi: Array[Evento] = []
 var selected_event: Evento = null
 
@@ -8,10 +9,12 @@ func _ready():
 	load_eventi()
 
 func load_eventi() -> void:
-	if FileAccess.file_exists("res://Data/eventi.json"):
-		var file = FileAccess.open("res://Data/eventi.json", FileAccess.READ)
+	# First check if user data exists
+	if FileAccess.file_exists(eventi_data_file):
+		var file = FileAccess.open(eventi_data_file, FileAccess.READ)
 		if file:
 			var data = file.get_as_text()
+			file.close()
 			var json = JSON.new()
 			var parse_result = json.parse(data)
 			if parse_result == OK:
@@ -29,12 +32,38 @@ func load_eventi() -> void:
 					evento.data.year = data_raw.get("year", 2024)
 					
 					eventi.append(evento)
+			print("Loaded ", eventi.size(), " events from user data")
+	# If no user data, try to load from default res:// location (first time only)
+	elif FileAccess.file_exists("res://Data/eventi.json"):
+		print("Loading initial events from res://Data/eventi.json")
+		var file = FileAccess.open("res://Data/eventi.json", FileAccess.READ)
+		if file:
+			var data = file.get_as_text()
 			file.close()
+			var json = JSON.new()
+			var parse_result = json.parse(data)
+			if parse_result == OK:
+				eventi = []
+				for evento_data in json.data:
+					var evento = Evento.new()
+					evento.titolo = evento_data.get("titolo", "")
+					evento.descrizione = evento_data.get("descrizione", "")
+					
+					# Load date
+					var data_raw = evento_data.get("data", {"day": 1, "month": 1, "year": 2024})
+					evento.data = Date.new()
+					evento.data.day = data_raw.get("day", 1)
+					evento.data.month = data_raw.get("month", 1)
+					evento.data.year = data_raw.get("year", 2024)
+					
+					eventi.append(evento)
+			# Save to user:// so we have a writable copy
+			save_eventi()
 	else:
-		print("File eventi.json non trovato.")
+		print("No event data found.")
 
 func save_eventi() -> void:
-	var file = FileAccess.open("res://Data/eventi.json", FileAccess.WRITE)
+	var file = FileAccess.open(eventi_data_file, FileAccess.WRITE)
 	if file:
 		var json = JSON.new()
 		var data = []
